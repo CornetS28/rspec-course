@@ -11,6 +11,4 @@ RSpec.describe "shorthand syntax" do
   context 'with one-liner syntax' do
     it { is_expected.to eq(5)}
   end
-
-
 end 
