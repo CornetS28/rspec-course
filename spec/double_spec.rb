@@ -20,3 +20,17 @@ RSpec.describe 'random double' do
   end
 
 end
+
+RSpec.describe 'doubles' do
+  it "tests the database content" do
+   db = double("Database Connection", connect: true, disconnect: 'Goodbye')
+   expect(db.connect).to eq(true)
+   expect(db.disconnect).to eq('Goodbye')  
+  end
+
+  it "tests the file system content" do
+    fs = double('File System')
+    allow(fs).to receive(:reed).and_return('Romeo and Juliet')  
+    allow(fs).to receive(:write).and_return(false)  
+  end
+end
